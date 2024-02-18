@@ -1,0 +1,35 @@
+<section class="cardSection">
+    <div class="container">
+        <div class="profileTitle">
+            <h2> <i class="fa fa-long-arrow-left"></i> Daily recommendation</h2>
+        </div>
+        <div class="profile" #swipeElement>
+            <div class="profile__shaddow" *ngIf="recommendedData.length !=0"> </div>
+            <div class="profile__slide" *ngFor="let item of recommendedData; let i = index">
+                <div swiperSlide class="card">
+                    <picture class="card__image">
+                        <img [src]="item.photo">
+                    </picture>
+                    <div class="card__content">
+                        <div class="card_verify"><i class="fa fa-check-circle"></i> {{item.Verified == 'yes' ?
+                            'Verified':'Newly added'}}</div>
+                        <h3 class="card__title">{{item.profileName}}</h3>
+                        <p class="card__text">{{item.sortData}}</p>
+                        <div class="card__buttons">
+                            <button class="card__sortlist" [ngClass]="{'active': item.starActive}"
+                                (click)="handler_sortlist(item)"> <i class="fa fa-star"></i> {{shortListText}}</button>
+                            <div class="card__like">
+                                <p>{{likeText}}</p>
+                                <button class="card__buttonsBtn" (click)="handler__rejected()"> <i
+                                        class="fa fa-close"></i> </button>
+                                <button class="card__buttonsBtn card__buttonsBtn--yellow" (click)="handler__interest()">
+                                    <i class="fa fa-check"></i> </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>

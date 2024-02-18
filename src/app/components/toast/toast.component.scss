@@ -1,0 +1,33 @@
+.toast {
+    padding: 20px 50px;
+    position: fixed;
+    background: #eb1f1f;
+    color: #fff;
+    max-width: 360px;
+    text-align: center;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 20px;
+    border-radius: 6px;
+    width: 100%;
+    top: -100px;
+    transition-duration: 0.5s;
+    z-index: 999;
+
+    i {
+        padding-right: 5px;
+    }
+
+    &.active {
+        top: 0;
+    }
+
+    &.yellow {
+        background: #ff9800;
+    }
+
+    &.green {
+        background: #24c147;
+    }
+
+}

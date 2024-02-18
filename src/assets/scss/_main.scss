@@ -1,0 +1,36 @@
+section{
+    padding: 50px 0px;
+     
+    @media(min-width: 992px){
+        padding: 80px 0px;
+    }
+}
+
+.container{
+    max-width: 100%;
+    padding:0 15px;
+    margin: 0 auto;
+    @media(min-width:768px){
+        max-width: 720px;
+    }
+    @media(min-width:992px){
+        max-width: 960px;
+    }
+    @media(min-width:1200px){
+        max-width: 1200px;
+    }
+}
+.swiper-pagination-bullet{
+    background-color: #fff;
+    opacity: 1;
+    height: 8px;
+    width: 8px;
+    &-active{
+    background-color: #33a2db;
+    }
+}
+.container--swiper{
+.swiper-pagination-bullet-active{
+    background-color: #ff9800 ;
+}
+}

@@ -1,0 +1,21 @@
+<header>
+    <div class="header">
+        <div class="container">
+            <div class="header__row">
+                <a class="header__logo" routerLink="/">LOGO</a>
+                <div class="header__links">
+                    <a title="Shortlisted" class="header__linksIcon">
+                        <i class="fa fa-star-o"></i> 
+                        <span *ngIf="shortlistCount != 0"> {{shortlistCount}}</span>
+                    </a>
+                    <a title="Interested" class="header__linksIcon">
+                        <i class="fa fa-heart-o"></i>
+                        <span  *ngIf="interestedCount != 0"> {{interestedCount}}</span>
+
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</header>

@@ -1,0 +1,26 @@
+<section class="bg-lightGray">
+    <div class="container">
+        <div class="detailCard">
+            <div class="detailCard__left">
+                <swiper [config]="cardConfig" class="swiper">
+                    <ng-template swiperSlide *ngFor="let item of pageData.gallery">
+                        <img [src]="item.path">
+                    </ng-template>
+                    <div slot="container-end" class="swiper-pagination"></div>
+                </swiper>
+                <div class="detailCard__id">
+                <a routerLink="/">  <i class="fa fa-long-arrow-left"></i>  </a>
+                   {{pageData.id}}
+                </div>
+               
+            </div>
+            <div class="detailCard__right">
+                <div class="content">
+                    <h2 class="content__title">{{pageData.profileName}} </h2>
+                    <p class="content__text">{{pageData.sortData}}</p>
+                    <!-- <button class="content__button">View More</button> -->
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

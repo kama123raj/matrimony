@@ -1,0 +1,7 @@
+<div class="toast" [ngClass]="{
+    'active': toastActive,
+    'green': tostContent == 'Interested',
+    'yellow':tostContent == 'Shortlisted',
+  }">
+  <i class="fa fa-check-circle"></i> {{tostContent}}
+</div>
