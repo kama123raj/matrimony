@@ -11,7 +11,7 @@
       <ng-template swiperSlide *ngFor="let item of profile; let i = index">
         <div class="card">
           <picture class="card__image" (click)="handler_yes(item)">
-            <img [src]="item.photo" />
+            <img [src]="item.photo" alt="sample text"/>
           </picture>
           <div class="card__content">
             <h3 class="card__title">{{item.profileName}}</h3>
