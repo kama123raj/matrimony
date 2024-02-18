@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { ChangeDetectorRef, Component, Input, ViewChild } from '@angular/core';
 import SwiperCore, { Pagination, Autoplay, EffectFade } from 'swiper';
 
 SwiperCore.use([Pagination, Autoplay, EffectFade]);
@@ -10,9 +10,14 @@ SwiperCore.use([Pagination, Autoplay, EffectFade]);
 })
 export class ProfileDetailComponent {
   @Input('profileData') profileData: any;
+
   pageData: any;
   cardConfig: any;
+  activeSlide: number = 1;
+  totalSlides!: number;
+  slidesConut: any;
 
+  constructor(private change: ChangeDetectorRef) {}
   ngOnInit(): void {
     this.pageData = this.profileData;
     this.handler__swiper();
@@ -22,10 +27,6 @@ export class ProfileDetailComponent {
       slidesPerView: 1,
       spaceBetween: 20,
       loop: false,
-      navigation: {
-        nextEl: '.swiper-button-next-cards',
-        prevEl: '.swiper-button-prev-cards',
-      },
       pagination: {
         el: '.swiper-pagination',
         type: 'bullets',
@@ -33,5 +34,14 @@ export class ProfileDetailComponent {
       },
       autoplay: false,
     };
+  }
+
+  onSwiper(swiper: any): void {
+    this.slidesConut = swiper;
+    this.totalSlides = this.slidesConut.slides.length;
+    this.slidesConut.on('slideChange', () => {
+      this.activeSlide = this.slidesConut.activeIndex + 1;
+      this.change.detectChanges();
+    });
   }
 }

@@ -35,16 +35,11 @@ export class CarouselMatchesComponent {
       slidesPerView: 1,
       spaceBetween: 20,
       loop: true,
-      navigation: {
-        nextEl: '.swiper-button-next-cards',
-        prevEl: '.swiper-button-prev-cards',
-      },
       pagination: {
         el: '.swiper-pagination',
         type: 'bullets',
         clickable: true,
       },
-
       autoplay: false,
       breakpoints: {
         320: {
